@@ -50,3 +50,7 @@ body{
 .errorRed{
     background-color: red;
 }
+
+.classbtnremove{
+    display: none;
+}
