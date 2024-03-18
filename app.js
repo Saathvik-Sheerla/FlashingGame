@@ -18,20 +18,22 @@ function askUser(i){
     players[i] = prompt("Enter your name");
 }
 
-document.addEventListener("keypress",()=>{
-    if(initialize === false){
-        let n = noPlayers();
-        initialize = true;
-    
-        if(counter < n && started === false && initialize === true){
+let srtbtn = document.querySelector("#srtbtn");
+
+function removeStartbtn(){
+    srtbtn.classList.add("classbtnremove");
+}
+
+srtbtn.addEventListener("click",()=>{
+        
+        if(started === false){
             started = true;
             askUser(counter++);
             h2.innerHTML = `Game started, Player Name: <i>${players[counter-1]}<i>`;
+            removeStartbtn();
             next();
             np++;
             }
-
-        }
 });
 
 function noPlayers(){
@@ -52,7 +54,7 @@ if(started === true){
 function next(){
     userSeq = [];
     score++;
-    points = points*2 + addon(score);
+    points += points*2;
 
     let idx = Math.floor(Math.random() * 3)+1;
     let randColor = btns[idx];
@@ -103,13 +105,9 @@ function checkAns(idx){
         setTimeout(()=>{
             body.classList.remove("errorRed");
         },800);
-        h2.innerHTML = `Game Over!  Your Score is <b>${score}<b> <br>press enter to play again`;
+        h2.innerHTML = `Game Over! Your score is <b>${score-1}<b> <br>press enter to play again`;
         reset();
 
-        if(np == n){
-            winner();
-            h2.innerHTML = `Game Over! <br> ${highScorePlayer} is winner with score <b>${score}`;
-        }
     }
 }
 
