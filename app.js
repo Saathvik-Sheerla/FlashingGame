@@ -36,6 +36,20 @@ srtbtn.addEventListener("click",()=>{
             }
 });
 
+
+document.addEventListener("keypress",()=>{
+        
+    if(started === false){
+        started = true;
+        askUser(counter++);
+        h2.innerHTML = `Game started, Player Name: <i>${players[counter-1]}<i>`;
+        removeStartbtn();
+        next();
+        np++;
+        }
+});
+
+
 function noPlayers(){
     return prompt("Enter no of players");
 }
@@ -105,8 +119,9 @@ function checkAns(idx){
         setTimeout(()=>{
             body.classList.remove("errorRed");
         },800);
-        h2.innerHTML = `Game Over! Your score is <b>${score-1}<b> <br>press enter to play again`;
+        h2.innerHTML = `Game Over! <br> ${players[0]}'s score is <b>${score}<b> <br>click start to play again`;
         reset();
+        srtbtn.classList.remove("classbtnremove");
 
     }
 }
