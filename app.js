@@ -28,7 +28,7 @@ srtbtn.addEventListener("click",()=>{
         
         if(started === false){
             started = true;
-            askUser(counter++);
+            //askUser(counter++);
             h2.innerHTML = `Game started, Player Name: <i>${players[counter-1]}<i>`;
             removeStartbtn();
             next();
@@ -41,7 +41,7 @@ document.addEventListener("keypress",()=>{
         
     if(started === false){
         started = true;
-        askUser(counter++);
+        //askUser(counter++);
         h2.innerHTML = `Game started, Player Name: <i>${players[counter-1]}<i>`;
         removeStartbtn();
         next();
