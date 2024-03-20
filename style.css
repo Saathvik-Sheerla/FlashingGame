@@ -39,6 +39,23 @@ body{
     background-color:  #938922;
 }
 
+.btn:hover{
+    animation: 0.3s shin;
+    animation-fill-mode: forwards;
+}
+
+@keyframes shin {
+
+    from{
+        box-shadow: none;
+    }
+
+    to{
+        box-shadow: 6px 5px 2px 2px rgba(0, 0, 0, 0.2);;
+    }
+
+}
+
 .gameFlash{
     background-color: #fff;
 }
