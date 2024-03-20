@@ -31,8 +31,7 @@ srtbtn.addEventListener("click",()=>{
             askUser(counter++);
             h2.innerHTML = `Game started, Player Name: <i>${players[counter-1]}<i>`;
             removeStartbtn();
-            next();
-            np++;
+            setTimeout(next,1000);
             }
 });
 
@@ -44,8 +43,7 @@ document.addEventListener("keypress",()=>{
         askUser(counter++);
         h2.innerHTML = `Game started, Player Name: <i>${players[counter-1]}<i>`;
         removeStartbtn();
-        next();
-        np++;
+        setTimeout(next,500);
         }
 });
 
